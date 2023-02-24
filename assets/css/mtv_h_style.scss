@@ -1,0 +1,109 @@
+:root {
+    --mtv-h-arrow-weight: 2px;
+    --mtv-h-arrow-background: #fff;
+    --mtv-h-arrow-color: #000;
+}
+
+.mtv-h-hzl-carousel {
+    position: relative;
+    outline: none;
+    * {
+        outline: none;
+        user-select: none;
+    }
+    .mtv-h-horizontal-scroll {
+        cursor: grab;
+        margin: 0 auto;
+        width: 100%;
+        position: relative;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        white-space: nowrap;
+        -ms-overflow-style: none;
+        display: grid;
+        align-items: center;
+        /* Internet Explorer 10+ */
+        scrollbar-width: none;
+        /* Firefox */
+        &::-webkit-scrollbar {
+            display: none;
+            /* Safari and Chrome */
+        }
+        .mtv-h-content-container {
+            position: relative;
+            .mtv-h-content-wrapper {
+                display: inline-block;
+                vertical-align: middle;
+                >div {
+                    display: inline-block;
+                    -webkit-transition: all .2s;
+                    transition: all .2s;
+                    letter-spacing: normal;
+                    vertical-align: top;
+                    padding: 20px 40px 0 0;
+                }
+            }
+        }
+    }
+}
+
+.mtv-h-carousel-triggers {
+    .arrow {
+        border: solid var(--mtv-h-arrow-color);
+        border-width: 0 var(--mtv-h-arrow-weight) var(--mtv-h-arrow-weight) 0;
+        display: inline-block;
+        padding: calc(2 * var(--mtv-h-arrow-weight);
+        &.right {
+            transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+        }
+        &.left {
+            transform: rotate(135deg);
+            -webkit-transform: rotate(135deg);
+        }
+    }
+    >div {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        background: var(--mtv-h-arrow-background);
+        color: var(--mtv-h-arrow-color);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: 0.2s all;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.35);
+        &:hover {
+            background: var(--mtv-h-arrow-color);
+            color: var(--mtv-h-arrow-background);
+            .arrow {
+                border-color: var(--mtv-h-arrow-background);
+            }
+        }
+    }
+    &.top {
+        >div {
+            top: 10px;
+        }
+    }
+    &.bottom {
+        >div {
+            bottom: 10px;
+        }
+    }
+    &.center {
+        >div {
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+    .mtv-h-left-trigger {
+        left: 0;
+        display: none;
+    }
+    .mtv-h-right-trigger {
+        right: 0;
+    }
+}
