@@ -9,7 +9,7 @@
 ### Examples
 
 
-add in <head> 
+add in head tag 
 
 ``` html
 <link href="assets/css/mtv_h_style.min.css">
