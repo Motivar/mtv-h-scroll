@@ -19,7 +19,7 @@ function mtv_hViewScrollHrzntl_grabbers() {
             var items = horizontal.querySelectorAll(options.item);
             if (items.length > parseInt(options.min)) {
                 var html = horizontal.innerHTML;
-                var new_html = '<div class= "mtv-h-horizontal-scroll"><div class= "mtv-h-content-container "><div class="mtv-h-content-wrapper">' + html + '</div></div></div>';
+                var new_html = '<div class= "mtv-h-horizontal-scroll"><div class= "mtv-h-content-container"><div class="mtv-h-content-wrapper">' + html + '</div></div></div>';
                 if (options.arrowPosition != 'none') {
                     new_html += '<div class="mtv-h-carousel-triggers ' + options.arrowPosition + '"><div class="mtv-h-left-trigger" onclick="mtv_hViewScrollHrzntl(\'left\', this);"><span class="arrow left"></span></div><div class="mtv-h-right-trigger" onclick="mtv_hViewScrollHrzntl(\'right\', this);"><span class="arrow right"></span></div></div>';
                 }
